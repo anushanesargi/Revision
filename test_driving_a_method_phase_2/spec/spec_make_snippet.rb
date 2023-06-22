@@ -8,4 +8,8 @@ describe "takes a string as an argument and returns the first five words and the
   it "returns GREEN" do
     expect(make_snippet("GREEN")).to eq "GREEN"
   end
+
+  it "returns GREEN..." do
+    expect(make_snippet("GREENER")).to eq "GREEN..."
+  end
 end
