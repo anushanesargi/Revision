@@ -1,6 +1,6 @@
 def time_estimate(string)
   count = string.split.size
-  # puts count
+  puts count
   total_seconds = count * 60/200.to_f
   # puts total_seconds
   minutes = (total_seconds % 3600)/60
