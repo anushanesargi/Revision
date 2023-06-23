@@ -10,4 +10,8 @@ describe "check if a text includes the string #TODO" do
     expect(todo_checks("Got Milk")).to eq "Nothing to do"
   end
 
+  it "returns nothing to do for an empty string" do
+    expect(todo_checks("")).to eq "Nothing to do"
+  end
+
 end
