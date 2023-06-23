@@ -28,7 +28,7 @@ describe "estimate of reading time for a text, assuming that one can read 200 wo
       of it.")).to eq "1 minute(s) and 26.7 second(s)"
   end
 
-  it "returns 1 minutes(s) and 50.1 second(s)" do
+  it "returns 1 minute(s) and 50.1 second(s)" do
     expect(time_estimate("Origin and exploration or rubber
 
       Many times we do not give any thought to rubber with consideration to its origin. 
@@ -62,7 +62,7 @@ describe "estimate of reading time for a text, assuming that one can read 200 wo
       The Portuguese started Atlantic slave trade, whereas the entire Hispaniola population died 50 years after Columbus. 
       Walt Hardenburg crossed the Andes in the late 1970 after working on the Panama Canal. 
       Furthermore, he travelled to London to confront the PACO board about the horrors slaves were undergoing.
-      ")).to eq "1 minutes(s) and 50.1 second(s)"
+      ")).to eq "1 minute(s) and 50.1 second(s)"
   end
 
 end
