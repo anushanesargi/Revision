@@ -1,4 +1,10 @@
 def test_capital_letter_and_punctutaion(text)
+  punctuation = [".", "?", "!"]
+
+  puts text[-1]
   # return /[[:alpha:]]/.match(text[0]) ? true : false
-  return /[[:alpha:]]/.match(text[0]) && text[0] == text[0].capitalize() ? true : false
+  if punctuation.include? "#{text[-1]}"
+    return true
+  end
+  # return /[[:alpha:]]/.match(text[0]) && text[0] == text[0].capitalize() ? true : false
 end
