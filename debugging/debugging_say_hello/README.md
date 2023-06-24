@@ -1,8 +1,10 @@
 ## Debug the following
-
-def say_hello(name)<br/>
-   return "hello #(name)"<br/>
+```
+def say_hello(name)
+   return "hello #(name)"
 end
+
+```
 
 > Intended output:
 
