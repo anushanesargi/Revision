@@ -1,10 +1,12 @@
 ## Debug the following
-
-def say_hello(name)<br/>
-_return "hello #(name)"<br/>
+```
+def say_hello(name)
+   return "hello #(name)"
 end
 
-* Intended output:
+```
 
-* > say_hello("kay")
-* => "hello kay"
+> Intended output:
+
+> say_hello("kay")
+> => "hello kay"
