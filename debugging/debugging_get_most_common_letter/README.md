@@ -15,3 +15,5 @@ end
 > 
 > > get_most_common_letter("the roof, the roof, the roof is on fire!")
 > => "o"
+> >get_most_common_letter("the swift, fox, jumped over, lazy dog")
+> => "o"
