@@ -9,7 +9,7 @@ RSpec.describe "DiaryEntry" do
 
   it "returns the number of words in the contents as an integer" do
     diary_entry = DiaryEntry.new("diary_title", "diary contents")
-    expect(diary_entry.count_words).to eq "2"
+    expect(diary_entry.count_words).to eq 2
   end
 
 end
