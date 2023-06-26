@@ -17,7 +17,7 @@ class DiaryEntry
   end
 
   def reading_time(wpm) # wpm is an integer representing the number of words the user can read per minute
-   
+    fail "wpm needs to be a positive integer" unless wpm.positive?
     #  puts count_words 
     count_words/wpm  # Returns an integer representing an estimate of the reading time in minutes
                     # for the contents at the given wpm.

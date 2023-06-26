@@ -35,9 +35,9 @@ RSpec.describe "#reading_time" do
     expect(diary_entry.reading_time(200)).to eq 0
   end
 
-  it "throw and error for 0 wpm" do
+  it "raise an error for 0 wpm" do
     diary_entry = DiaryEntry.new("diary_title", "hello")
-    expect { diary_entry.reading_time(0) }.to raise_error "Reading speed needs to be a positive integer"
+    expect { diary_entry.reading_time(0) }.to raise_error "wpm needs to be a positive integer"
   end
 
 end
