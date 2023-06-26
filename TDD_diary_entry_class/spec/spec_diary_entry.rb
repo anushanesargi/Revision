@@ -16,6 +16,11 @@ RSpec.describe "#count_words" do
     expect(diary_entry.count_words).to eq 2
   end
 
+  it "returns 0 for an empty contemt string" do
+    diary_entry = DiaryEntry.new("diary_title", "")
+    expect(diary_entry.count_words).to eq 0
+  end
+
 end
 
 RSpec.describe "#reading_time" do
