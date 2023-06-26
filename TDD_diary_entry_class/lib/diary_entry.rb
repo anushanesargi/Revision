@@ -2,7 +2,7 @@ class DiaryEntry
   def initialize(title, contents) # title, contents are strings
     @title = title # ...
     @contents = contents
-    @count = 0
+    # @count = 0
   end
 
   def title
@@ -35,23 +35,13 @@ class DiaryEntry
     # If called again, `reading_chunk` should return the next chunk, skipping
     # what has already been read, until the contents is fully read.
     # The next call after that it should restart from the beginning
-    puts "i am here1"
     
-
-    if @count == 0
-      puts "i am here2"
-      # array_of_words_for_first_chunk = content_split
-      puts "i am here3"
-      chunk_of_words = content_split[0, wpm * minutes].join(" ")
-    else
-      puts "i am here4"
-      return @count
-    end
-
-    @count += 1
-    new_content = @contents[wpm * minutes + 1.. ]
-    puts "new content is #{new_content}"
-    return chunk_of_words
+    # puts "i am here1"
+    
+    chunk_of_words = content_split[0, wpm * minutes]
+    @contents = content_split[(wpm * minutes)..].join(" ")
+    # puts "new content is #{@contents}"
+    return chunk_of_words.join(" ")
   end
 
   private
