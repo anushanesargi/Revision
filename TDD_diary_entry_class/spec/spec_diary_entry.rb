@@ -36,3 +36,12 @@ RSpec.describe "#reading_time" do
   end
 
 end
+
+RSpec.describe "#reading_chunk" do
+
+  it "Returns a string with a chunk of the contents that the user could read in the given number of minutes." do
+  diary_entry = DiaryEntry.new("diary_title", ("one " * 100))
+  expect(diary_entry.reading_chunk(2, 5)).to eq "one one one one one one one one one one "
+  end
+
+end

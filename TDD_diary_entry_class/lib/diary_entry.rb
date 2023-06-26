@@ -32,5 +32,8 @@ class DiaryEntry
     # If called again, `reading_chunk` should return the next chunk, skipping
     # what has already been read, until the contents is fully read.
     # The next call after that it should restart from the beginning.
+    # number_of_words_for_first_chunk = wpm * minutes
+
+    # contents[0..number_of_words_for_first_chunk]
   end
 end
