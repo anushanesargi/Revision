@@ -65,4 +65,12 @@ RSpec.describe "#reading_chunk" do
     expect(diary_entry.reading_chunk(2, 4)).to eq "two three three three three three"
   end
 
+  it "returns from the start on the next call after the content is fully read." do
+    diary_entry = DiaryEntry.new("diary_title", ("one " * 5 + "two " * 4 + "three " * 5))
+    diary_entry.reading_chunk(1, 3)
+    diary_entry.reading_chunk(1, 5)
+    diary_entry.reading_chunk(2, 4)
+    expect(diary_entry.reading_chunk(1, 2)).to eq "one one"
+  end
+
 end
