@@ -1,11 +1,11 @@
 class GrammarStats
   def initialize
-    # ...
+    @punctuation = [",", ".", "!"]
   end
 
-  def check(text) # text is a string
-    return text # Returns true or false depending on whether the text begins with a capital
-    # letter and ends with a sentence-ending punctuation mark.
+  def check(text)
+    # text is a string
+    return /[[:alpha:]]/.match(text[0]) && text[0] == text[0].capitalize() && (@punctuation.include? "#{text[-1]}")
   end
 
   def percentage_good
