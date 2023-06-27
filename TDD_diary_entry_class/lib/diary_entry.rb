@@ -28,17 +28,16 @@ class DiaryEntry
   def reading_chunk(wpm, minutes)
     words_end_at = @words_read_until + (wpm * minutes)
     
-    puts "words read until int the beginning #{@words_read_until}"
+    # puts "words read until int the beginning #{@words_read_until}"
     chunk_of_words = content_split[@words_read_until...words_end_at]
-    # @contents = content_split[(wpm * minutes)..].join(" ")
-    # puts "new content is #{@contents}"
-    if words_end_at > count_words
+   
+    if words_end_at >= count_words
       @words_read_until = 0
     else
       @words_read_until = words_end_at
     end
 
-    puts "words read until #{@words_read_until}"
+    # puts "words read until #{@words_read_until}"
     return chunk_of_words.join(" ")
   end
 
