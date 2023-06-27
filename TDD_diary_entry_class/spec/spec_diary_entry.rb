@@ -52,9 +52,7 @@ RSpec.describe "#reading_chunk" do
   it "Returns the next chunk if called again skipping what has already been read." do
     diary_entry = DiaryEntry.new("diary_title", ("one " * 5 + "two " * 4 + "three " * 5))
     first_call = diary_entry.reading_chunk(1, 3)
-    puts "this is first call #{first_call}"
     second_call = diary_entry.reading_chunk(1, 5)
-    puts "this is second_call #{second_call}"
     expect(second_call).to eq "one one two two two"
   end
 

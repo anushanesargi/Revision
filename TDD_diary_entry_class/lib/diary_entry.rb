@@ -17,19 +17,17 @@ class DiaryEntry
     content_split.size # Returns the number of words in the contents as an integer
   end
 
+  
+  
   def reading_time(wpm) # wpm is an integer representing the number of words the user can read per minute
     fail "wpm needs to be a positive integer" unless wpm.positive?
-    #  puts count_words 
-    # Returns an integer representing an estimate of the reading time in minutes
-    # for the contents at the given wpm.
-    count_words/wpm
+    count_words/wpm # Returns an integer representing an estimate of the reading time in minutes for the contents at the given wpm.
   end
 
   def reading_chunk(wpm, minutes)
     words_end_at = @words_read_until + (wpm * minutes)
     
-    # puts "words read until int the beginning #{@words_read_until}"
-    chunk_of_words = content_split[@words_read_until...words_end_at]
+    chunk_of_words = content_split[@words_read_until...words_end_at] # Returns a string with a chunk of the contents that the user could read in the given number of minutes.
    
     if words_end_at >= count_words
       @words_read_until = 0
@@ -37,7 +35,6 @@ class DiaryEntry
       @words_read_until = words_end_at
     end
 
-    # puts "words read until #{@words_read_until}"
     return chunk_of_words.join(" ")
   end
 
