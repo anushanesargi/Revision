@@ -35,7 +35,7 @@ RSpec.describe "#reading_time" do
     expect(diary_entry.reading_time(200)).to eq 0
   end
 
-  it "raise an error for 0 wpm" do
+  it "raises an error for 0 wpm" do
     diary_entry = DiaryEntry.new("diary_title", "hello")
     expect { diary_entry.reading_time(0) }.to raise_error "wpm needs to be a positive integer"
   end
@@ -78,5 +78,12 @@ RSpec.describe "#reading_chunk" do
     diary_entry.reading_chunk(1, 1)
     expect(diary_entry.reading_chunk(1, 2)).to eq "one one"
   end
+
+  it "raises an error for 0 wpm" do
+    diary_entry = DiaryEntry.new("diary_title", "hello")
+    expect { diary_entry.reading_chunk(0, 3) }.to raise_error "wpm needs to be a positive integer"
+  end
+
+
 
 end
