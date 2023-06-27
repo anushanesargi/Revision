@@ -7,7 +7,12 @@ class GrammarStats
     if text == ""
       return false
     else
-      return /[[:alpha:]]/.match(text[0]) && text[0] == text[0].capitalize() && (@punctuation.include? "#{text[-1]}")
+      if_letter = /[[:alpha:]]/.match(text[0])
+      if_capital = (text[0] == text[0].capitalize())
+      if_appropriate_punctuation = @punctuation.include? "#{text[-1]}"
+      
+      return if_letter && if_capital && if_appropriate_punctuation
+
     end
     # text is a string
     
