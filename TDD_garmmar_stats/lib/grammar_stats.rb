@@ -4,8 +4,13 @@ class GrammarStats
   end
 
   def check(text)
+    if text == ""
+      return false
+    else
+      return /[[:alpha:]]/.match(text[0]) && text[0] == text[0].capitalize() && (@punctuation.include? "#{text[-1]}")
+    end
     # text is a string
-    return /[[:alpha:]]/.match(text[0]) && text[0] == text[0].capitalize() && (@punctuation.include? "#{text[-1]}")
+    
   end
 
   def percentage_good

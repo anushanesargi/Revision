@@ -25,4 +25,9 @@ RSpec.describe "#check" do
     grammar_stats = GrammarStats.new
     expect(grammar_stats.check("hello hello")).to eq false
   end
+
+  it "returns false for empty text string" do
+    grammar_stats = GrammarStats.new
+    expect(grammar_stats.check("")).to eq false
+  end
 end
