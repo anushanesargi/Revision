@@ -25,6 +25,7 @@ class DiaryEntry
   end
 
   def reading_chunk(wpm, minutes)
+    fail "wpm needs to be a positive integer" unless wpm.positive?
     words_end_at = @words_read_until + (wpm * minutes)
     
     chunk_of_words = content_split[@words_read_until...words_end_at] # Returns a string with a chunk of the contents that the user could read in the given number of minutes.
