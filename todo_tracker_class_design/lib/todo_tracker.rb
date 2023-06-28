@@ -3,12 +3,17 @@ class TodoTracker
     @list = []
   end
   
-  def add_task(text) # text is a string
-    @list << text
+  def add_task(*args) # text is a string
+    puts "#{args}"
+    @list << args[0]
+    # args.each { |task|
+    #   @list << task
+    # }
+    
     # adds task to the todo list
   end
   
-  def mark_task(text) # text is a string
+  def mark_task(*args) # text is a string
     # removes the marked task from todo_list
   end
   
