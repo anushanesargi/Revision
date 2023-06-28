@@ -68,3 +68,52 @@ def todo_list
 end
 
 ```
+
+## test examples
+
+```
+# 1
+
+todo_tracker = TodoTracker.new
+todo_tracker.todo_list # => []
+
+# 2
+
+todo_tracker = TodoTracker.new
+todo_tracker.add_task("Buy Chocolates")
+todo_tracker.todo_list # => ["Buy Chocolate"]
+
+# 3
+
+todo_tracker = TodoTracker.new
+todo_tracker.add_task("Buy Chocolates", "Meditate")
+todo_tracker.todo_list # => ["Buy Chocolate", "Meditate"]
+
+# 4
+
+todo_tracker = TodoTracker.new
+todo_tracker.add_task("Buy Chocolates", "Buy Chocolates")
+todo_tracker.todo_list # => ["Buy Chocolate"]
+
+# 5
+
+todo_tracker = TodoTracker.new
+todo_tracker.add_task("Buy Chocolates", "Meditate")
+todo_tracker.mark_task("Meditate")
+todo_tracker.todo_list # => ["Buy Chocolate"]
+
+# 6
+
+todo_tracker = TodoTracker.new
+todo_tracker.add_task("Buy Chocolates", "Meditate")
+todo_tracker.mark_task("Meditate")
+todo_tracker.mark_task("Meditate") # raise error 
+todo_tracker.todo_list # => ["Buy Chocolate"]
+
+# 7
+
+todo_tracker = TodoTracker.new
+todo_tracker.mark_task("Meditate") # raise error no task Meditate to mark
+todo_tracker.todo_list # => [""]
+
+```
