@@ -82,26 +82,26 @@ todo_tracker.todo_list # => []
 
 todo_tracker = TodoTracker.new
 todo_tracker.add_task("Buy Chocolates")
-todo_tracker.todo_list # => ["Buy Chocolate"]
+todo_tracker.todo_list # => ["Buy Chocolates"]
 
 # 3
 
 todo_tracker = TodoTracker.new
 todo_tracker.add_task("Buy Chocolates", "Meditate")
-todo_tracker.todo_list # => ["Buy Chocolate", "Meditate"]
+todo_tracker.todo_list # => ["Buy Chocolates", "Meditate"]
 
 # 4
 
 todo_tracker = TodoTracker.new
 todo_tracker.add_task("Buy Chocolates", "Buy Chocolates")
-todo_tracker.todo_list # => ["Buy Chocolate"]
+todo_tracker.todo_list # => ["Buy Chocolates"]
 
 # 5
 
 todo_tracker = TodoTracker.new
 todo_tracker.add_task("Buy Chocolates", "Meditate")
 todo_tracker.mark_task("Meditate")
-todo_tracker.todo_list # => ["Buy Chocolate"]
+todo_tracker.todo_list # => ["Buy Chocolates"]
 
 # 6
 
@@ -109,7 +109,7 @@ todo_tracker = TodoTracker.new
 todo_tracker.add_task("Buy Chocolates", "Meditate")
 todo_tracker.mark_task("Meditate")
 todo_tracker.mark_task("Meditate") # raise error 
-todo_tracker.todo_list # => ["Buy Chocolate"]
+todo_tracker.todo_list # => ["Buy Chocolates"]
 
 # 7
 

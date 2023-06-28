@@ -1,11 +1,18 @@
 require 'todo_tracker'
 
-RSpec.describe "#todo_list" do
+RSpec.describe TodoTracker do
   context "no tasks added" do
-    it "returns empty list" do
+    it "#todo_list returns empty list" do
       todo_tracker = TodoTracker.new
       expect(todo_tracker.todo_list).to eq []
     end
+  end
 
+  context "when one task Buy Chocolates added" do
+    it "#todo_list returns ['Buy Chocolates']" do
+      todo_tracker = TodoTracker.new
+      todo_tracker.add_task("Buy Chocolates")
+      expect(todo_tracker.todo_list).to eq ["Buy Chocolates"]
+    end
   end
 end
