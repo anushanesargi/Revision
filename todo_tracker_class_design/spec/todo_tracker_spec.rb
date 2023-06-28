@@ -16,14 +16,14 @@ RSpec.describe TodoTracker do
     end
   end
 
-  # context "when two tasks are added in two different calls" do
-  #   it "#todo_list returns ['Buy Chocolates', 'Meditate']" do
-  #     todo_tracker = TodoTracker.new
-  #     todo_tracker.add_task["Buy Chocolates"]
-  #     todo_tracker.add_task["Meditate"]
-  #     expect(todo_tracker.todo_list).to eq ["Buy Chocolates", "Meditate"]
-  #   end
-  # end
+  context "when two tasks are added in two different calls" do
+    it "#todo_list returns ['Buy Chocolates', 'Meditate']" do
+      todo_tracker = TodoTracker.new
+      todo_tracker.add_task("Buy Chocolates")
+      todo_tracker.add_task("Meditate")
+      expect(todo_tracker.todo_list).to eq ["Buy Chocolates", "Meditate"]
+    end
+  end
 
   # context "when list of tasks are added" do
   #   it "#todo_list returns ['Buy Chocolates', 'Meditate']" do
