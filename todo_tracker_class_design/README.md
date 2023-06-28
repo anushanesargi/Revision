@@ -42,7 +42,7 @@ For complex challenges you might want to come up with a list of examples first a
 
 For each example you create as a test, implement the behaviour that allows the class to behave according to your example.
 
-At this point you may wish to apply small-step test-driving to manage the complexity. This means you only write the minimum lines of the example to get the test to fail (red), then make it pass (green) and refactor, before adding another line to the test until it fails, then continue.
+At this point you may wish to apply small-step test-driving to manage the complexity. This means you only write the minimum lines of the example to get the test to fail (red], then make it pass (green] and refactor, before adding another line to the test until it fails, then continue.
 
 Then return to step 3 until you have addressed the problem you were given. You may also need to revise your design, for example if you realise you made a mistake earlier.
 
@@ -54,11 +54,11 @@ class TodoTracker
     # ...
   end
 
-  def add_task(text) # text is a string
+  def add_task(*args] # *args takes n number of arguments
     # adds task to the todo list
   end
 
-  def mark_task(text) # text is a string
+  def mark_task(*args] # *args takes n number of arguments
     # removes the marked task from todo_list
   end
 
@@ -81,53 +81,53 @@ todo_tracker.todo_list # => []
 # 2
 
 todo_tracker = TodoTracker.new
-todo_tracker.add_task("Buy Chocolates")
+todo_tracker.add_task["Buy Chocolates"]
 todo_tracker.todo_list # => ["Buy Chocolates"]
 
 # 3
 
 todo_tracker = TodoTracker.new
-todo_tracker.add_task("Buy Chocolates")
-todo_tracker.add_task("Meditate")
+todo_tracker.add_task["Buy Chocolates"]
+todo_tracker.add_task["Meditate"]
 todo_tracker.todo_list # => ["Buy Chocolates", "Meditate"]
 
 # 4
 
 todo_tracker = TodoTracker.new
-todo_tracker.add_task("Buy Chocolates", "Meditate")
+todo_tracker.add_task["Buy Chocolates", "Meditate"]
 todo_tracker.todo_list # => ["Buy Chocolates", "Meditate"]
 
 # 5
 
 todo_tracker = TodoTracker.new
-todo_tracker.add_task("Buy Chocolates", "Buy Chocolates")
+todo_tracker.add_task["Buy Chocolates", "Buy Chocolates"]
 todo_tracker.todo_list # => ["Buy Chocolates"]
 
 # 6
 
 todo_tracker = TodoTracker.new
-todo_tracker.add_task("Buy Chocolates", "Meditate")
-todo_tracker.mark_task("Meditate")
+todo_tracker.add_task["Buy Chocolates", "Meditate"]
+todo_tracker.mark_task["Meditate"]
 todo_tracker.todo_list # => ["Buy Chocolates"]
 
 # 7
 
 todo_tracker = TodoTracker.new
-todo_tracker.add_task("Buy Chocolates", "Meditate")
-todo_tracker.mark_task("Meditate")
-todo_tracker.mark_task("Meditate") # raise error 
+todo_tracker.add_task["Buy Chocolates", "Meditate"]
+todo_tracker.mark_task["Meditate"]
+todo_tracker.mark_task["Meditate"] # raise error 
 todo_tracker.todo_list # => ["Buy Chocolates"]
 
 # 8
 
 todo_tracker = TodoTracker.new
-todo_tracker.mark_task("Meditate") # raise error task not found
+todo_tracker.mark_task["Meditate"] # raise error task not found
 todo_tracker.todo_list # => [""]
 
 # 9
 
 todo_tracker = TodoTracker.new
-todo_tracker.add_task("Buy Chocolates", "Meditate")
-todo_tracker.mark_task("Buy Milk") # raise error task not found
+todo_tracker.add_task["Buy Chocolates", "Meditate"]
+todo_tracker.mark_task["Buy Milk"] # raise error task not found
 todo_tracker.todo_list # => [""]
 ```
