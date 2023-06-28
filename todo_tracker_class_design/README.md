@@ -45,3 +45,26 @@ For each example you create as a test, implement the behaviour that allows the c
 At this point you may wish to apply small-step test-driving to manage the complexity. This means you only write the minimum lines of the example to get the test to fail (red), then make it pass (green) and refactor, before adding another line to the test until it fails, then continue.
 
 Then return to step 3 until you have addressed the problem you were given. You may also need to revise your design, for example if you realise you made a mistake earlier.
+
+## Design
+
+```
+class TodoTracker
+def initialize
+  # ...
+end
+
+def add_task(text) # text is a string
+  # adds task to the todo list
+end
+
+def mark_task(text) # text is a string
+  # removes the marked task from todo_list
+end
+
+def todo_list
+  # returns the complete list of tasks when user adds any todo tasks
+  # returns a list of todo tasks without marked tasks after having marked tasks disapperead
+end
+
+```
