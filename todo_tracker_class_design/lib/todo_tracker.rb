@@ -5,10 +5,10 @@ class TodoTracker
   
   def add_task(*args) # text is a string
     puts "#{args}"
-    @list << args[0]
-    # args.each { |task|
-    #   @list << task
-    # }
+    # @list << args[0]
+    args.each { |task|
+      @list << task
+    }
     
     # adds task to the todo list
   end

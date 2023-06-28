@@ -25,7 +25,7 @@ RSpec.describe TodoTracker do
     end
   end
 
-  context "when list of tasks are added" do
+  context "when n number of tasks are added" do
     it "#todo_list returns ['Buy Chocolates', 'Meditate']" do
       todo_tracker = TodoTracker.new
       todo_tracker.add_task("Buy Chocolates", "Meditate")
