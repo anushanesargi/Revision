@@ -4,6 +4,7 @@ class TodoTracker
   end
   
   def add_task(text) # text is a string
+    @list << text
     # adds task to the todo list
   end
   
