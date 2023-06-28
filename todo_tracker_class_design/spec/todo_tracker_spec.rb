@@ -8,8 +8,8 @@ RSpec.describe TodoTracker do
     end
   end
 
-  context "when one task Buy Chocolates added" do
-    it "#todo_list returns ['Buy Chocolates']" do
+  context "when two tasks are added in two different calls" do
+    it "#todo_list returns ['Buy Chocolates', 'Meditate']" do
       todo_tracker = TodoTracker.new
       todo_tracker.add_task("Buy Chocolates")
       todo_tracker.add_task("Meditate")
