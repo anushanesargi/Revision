@@ -38,4 +38,11 @@ RSpec.describe "#percentage_good" do
     grammar_stats.check("Hello!")
     expect(grammar_stats.percentage_good).to eq 100
   end
+
+  it "retruns 50 for a true and false check" do
+    grammar_stats = GrammarStats.new
+    grammar_stats.check("Hello!")
+    grammar_stats.check("Hello")
+    expect(grammar_stats.percentage_good).to eq 50
+  end
 end
