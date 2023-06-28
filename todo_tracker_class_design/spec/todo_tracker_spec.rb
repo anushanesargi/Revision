@@ -36,7 +36,7 @@ RSpec.describe TodoTracker do
   context "when duplicate tasks are added" do
     it "#todo_list returns ['Buy Chocolates']" do
       todo_tracker = TodoTracker.new
-      todo_tracker.add_task("Buy Chocolates", "Buy Chocolate")
+      todo_tracker.add_task("Buy Chocolates", "Buy Chocolates")
       expect(todo_tracker.todo_list).to eq ["Buy Chocolates"]
     end
   end

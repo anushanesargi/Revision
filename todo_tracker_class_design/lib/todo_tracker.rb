@@ -6,7 +6,7 @@ class TodoTracker
   def add_task(*args) # text is a string
     puts "#{args}"
     # @list << args[0]
-    args.each { |task|
+    args.uniq.each { |task|
       @list << task
     }
     
