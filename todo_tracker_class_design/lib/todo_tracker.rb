@@ -1,6 +1,6 @@
 class TodoTracker
   def initialize
-    # ...
+    @list = []
   end
   
   def add_task(text) # text is a string
@@ -12,8 +12,9 @@ class TodoTracker
   end
   
   def todo_list
+    @list
     # returns the complete list of tasks when user adds any todo tasks
     # returns a list of todo tasks without marked tasks after having marked tasks disapperead
   end
-  
+
 end  
