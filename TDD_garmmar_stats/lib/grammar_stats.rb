@@ -40,7 +40,6 @@ class GrammarStats
     @percentage = @percentage * @no_of_true_checks/@no_of_calls
 
     return @percentage
-    # Returns as an integer the percentage of texts checked so far that passed
-    # the check defined in the `check` method. The number 55 represents 55%.
+    
   end
 end
