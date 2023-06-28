@@ -1,14 +1,14 @@
 require 'todo_tracker'
 
 RSpec.describe TodoTracker do
-  context "no tasks added" do
+  context "1. no tasks added" do
     it "#todo_list returns empty list" do
       todo_tracker = TodoTracker.new
       expect(todo_tracker.todo_list).to eq []
     end
   end
 
-  context "when one task is added" do
+  context "2. when one task is added" do
     it "#todo_list returns ['Buy Chocolates']" do
       todo_tracker = TodoTracker.new
       todo_tracker.add_task("Buy Chocolates")
@@ -16,7 +16,7 @@ RSpec.describe TodoTracker do
     end
   end
 
-  context "when two tasks are added in two different calls" do
+  context "3. when two tasks are added in two different calls" do
     it "#todo_list returns ['Buy Chocolates', 'Meditate']" do
       todo_tracker = TodoTracker.new
       todo_tracker.add_task("Buy Chocolates")
@@ -25,7 +25,7 @@ RSpec.describe TodoTracker do
     end
   end
 
-  context "when n number of tasks are added" do
+  context "4. when n number of tasks are added" do
     it "#todo_list returns ['Buy Chocolates', 'Meditate']" do
       todo_tracker = TodoTracker.new
       todo_tracker.add_task("Buy Chocolates", "Meditate")
@@ -33,7 +33,7 @@ RSpec.describe TodoTracker do
     end
   end
 
-  context "when duplicate tasks are added" do
+  context "5. when duplicate tasks are added" do
     it "#todo_list returns ['Buy Chocolates']" do
       todo_tracker = TodoTracker.new
       todo_tracker.add_task("Buy Chocolates", "Buy Chocolates")
