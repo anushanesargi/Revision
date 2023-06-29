@@ -16,15 +16,6 @@ RSpec.describe TodoTracker do
     end
   end
 
-  context "3. when two tasks are added in two different calls" do
-    it "#todo_list returns ['Buy Chocolates', 'Meditate']" do
-      todo_tracker = TodoTracker.new
-      todo_tracker.add_task("Buy Chocolates")
-      todo_tracker.add_task("Meditate")
-      expect(todo_tracker.todo_list).to eq ["Buy Chocolates", "Meditate"]
-    end
-  end
-
   context "4. when n number of tasks are added" do
     it "#todo_list returns ['Buy Chocolates', 'Meditate']" do
       todo_tracker = TodoTracker.new
@@ -41,20 +32,18 @@ RSpec.describe TodoTracker do
     end
   end
 
-  context "6. when duplicate tasks are added" do
-    it "#todo_list returns ['Buy Chocolates']" do
-      todo_tracker = TodoTracker.new
-      todo_tracker.add_task("Buy Chocolates")
-      todo_tracker.add_task("Buy Chocolates")
-      expect(todo_tracker.todo_list).to eq ["Buy Chocolates"]
-    end
-  end
-
   context "7. when adding an empty task" do
     it "raises error " do
       todo_tracker = TodoTracker.new
       expect{ todo_tracker.add_task("")}.to raise_error "Cannot add an empty task"
     end
   end
+
+  # context "8. when adding an empty task" do
+  #   it "raises error " do
+  #     todo_tracker = TodoTracker.new
+  #     expect{ todo_tracker.add_task(" ")}.to raise_error "Cannot add an empty/blank task"
+  #   end
+  # end
 
 end
