@@ -109,28 +109,24 @@ todo_tracker.add_task(" ") # => raise error
 # 7
 
 todo_tracker = TodoTracker.new
-todo_tracker.add_task("Buy Chocolates", "Meditate")
-todo_tracker.mark_task("Meditate")
-todo_tracker.todo_list # => ["Buy Chocolates"]
+todo_tracker.mark_task("Meditate") # raise error task not found
+todo_tracker.todo_list # => []
 
 # 8
 
 todo_tracker = TodoTracker.new
 todo_tracker.add_task("Buy Chocolates", "Meditate")
 todo_tracker.mark_task("Meditate")
-todo_tracker.mark_task("Meditate") # raise error 
 todo_tracker.todo_list # => ["Buy Chocolates"]
 
 # 9
 
 todo_tracker = TodoTracker.new
+todo_tracker.add_task("Buy Chocolates", "Meditate")
+todo_tracker.mark_task("Meditate")
 todo_tracker.mark_task("Meditate") # raise error task not found
-todo_tracker.todo_list # => [""]
+todo_tracker.todo_list # => ["Buy Chocolates"]
 
 # 10
 
-todo_tracker = TodoTracker.new
-todo_tracker.add_task("Buy Chocolates", "Meditate")
-todo_tracker.mark_task("Buy Milk") # raise error task not found
-todo_tracker.todo_list # => [""]
 ```
