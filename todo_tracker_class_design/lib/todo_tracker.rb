@@ -7,7 +7,7 @@ class TodoTracker
     puts "#{args}"
     
     if args == [""]
-      fail "Cannot add an empty task"
+      fail "Not a valid task"
     end
     args.each { |task|
       next if @list.include? task
