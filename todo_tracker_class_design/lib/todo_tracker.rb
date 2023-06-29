@@ -5,7 +5,10 @@ class TodoTracker
   
   def add_task(*args) # text is a string
     puts "#{args}"
-    # @list << args[0]
+    
+    if args == [""]
+      fail "Cannot add an empty task"
+    end
     args.each { |task|
       next if @list.include? task
       @list << task
