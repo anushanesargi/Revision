@@ -6,7 +6,7 @@ class TodoTracker
   def add_task(*args) # text is a string
     puts "#{args}"
     
-    if args == [""]
+    if args == [""] || args == [" "]
       fail "Not a valid task"
     end
     args.each { |task|
