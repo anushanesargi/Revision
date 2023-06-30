@@ -71,4 +71,12 @@ RSpec.describe TodoTracker do
     end
   end
 
+  context "" do
+    it "" do
+      todo_tracker = TodoTracker.new
+      todo_tracker.add_task("Buy Chocolates", "Meditate")
+      expect{ todo_tracker.mark_task("Buy Milk") }.to raise_error "Task not found"
+    end
+  end
+
 end
