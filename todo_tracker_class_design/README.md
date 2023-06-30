@@ -123,10 +123,15 @@ todo_tracker.todo_list # => ["Buy Chocolates"]
 
 todo_tracker = TodoTracker.new
 todo_tracker.add_task("Buy Chocolates", "Meditate")
+todo_tracker.mark_task("Meditate", "Buy Chocolates")
+todo_tracker.todo_list # => []
+
+# 10
+
+todo_tracker = TodoTracker.new
+todo_tracker.add_task("Buy Chocolates", "Meditate")
 todo_tracker.mark_task("Meditate")
 todo_tracker.mark_task("Meditate") # raise error task not found
 todo_tracker.todo_list # => ["Buy Chocolates"]
-
-# 10
 
 ```

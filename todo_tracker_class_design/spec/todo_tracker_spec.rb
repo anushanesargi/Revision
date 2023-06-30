@@ -62,7 +62,7 @@ RSpec.describe TodoTracker do
     end
   end
 
-  context "8. when marking an existing task as completed" do
+  context "9. when marking an existing task as completed" do
     it "#todo_list returns ['Buy Chocolates']" do
       todo_tracker = TodoTracker.new
       todo_tracker.add_task("Buy Chocolates", "Meditate")
