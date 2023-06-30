@@ -16,7 +16,8 @@ class TodoTracker
 
   end
   
-  def mark_task(*args) # text is a string
+  def mark_task(*args)
+    fail "Task not found" if @list.empty? # text is a string
     # removes the marked task from todo_list
   end
   
