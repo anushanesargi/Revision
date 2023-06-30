@@ -4,7 +4,7 @@ class TodoTracker
   end
   
   def add_task(*args)
-    puts "#{args}"
+    # puts "#{args}"
     
     if args == [""] || args == [" "]
       fail "Not a valid task"
@@ -17,7 +17,14 @@ class TodoTracker
   end
   
   def mark_task(*args)
-    fail "List is empty." if @list.empty? # text is a string
+    fail "List is empty." if @list.empty?
+    # puts "tasks in list are: #{@list}"
+    # puts "tasks to mark are: #{args}"
+    # task_index = @list.index("#{args[0]}")
+    # puts "task index is #{task_index}"
+
+    @list = @list - args
+    return @list
     # removes the marked task from todo_list
   end
   
