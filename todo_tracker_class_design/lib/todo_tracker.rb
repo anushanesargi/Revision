@@ -18,14 +18,8 @@ class TodoTracker
   
   def mark_task(*args)
     fail "List is empty." if @list.empty?
-    # puts "tasks in list are: #{@list}"
-    # puts "tasks to mark are: #{args}"
-    # task_index = @list.index("#{args[0]}")
-    # puts "task index is #{task_index}"
-
     @list = @list - args
     return @list
-    # removes the marked task from todo_list
   end
   
   def todo_list
