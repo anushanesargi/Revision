@@ -49,7 +49,7 @@ RSpec.describe TodoTracker do
   context "7. when marking a task in empty list" do
     it "raises error " do
       todo_tracker = TodoTracker.new
-      expect{ todo_tracker.mark_task("Meditate")}.to raise_error "Task not found"
+      expect{ todo_tracker.mark_task("Meditate")}.to raise_error "List is empty."
     end
   end
 
