@@ -18,6 +18,7 @@ class TodoTracker
   
   def mark_task(*args)
     fail "List is empty." if @list.empty?
+    fail "Task not found" if !(args & @list == args)
     @list = @list - args
     return @list
   end
