@@ -3,7 +3,7 @@ class TodoTracker
     @list = []
   end
   
-  def add_task(*args) # text is a string
+  def add_task(*args)
     puts "#{args}"
     
     if args == [""] || args == [" "]
@@ -13,8 +13,7 @@ class TodoTracker
       next if @list.include? task
       @list << task
     }
-    
-    # adds task to the todo list
+
   end
   
   def mark_task(*args) # text is a string
