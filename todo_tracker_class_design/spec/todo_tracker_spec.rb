@@ -62,7 +62,7 @@ RSpec.describe TodoTracker do
     end
   end
 
-  context "9. when marking an existing task as completed" do
+  context "9. when marking multiple existing tasks as completed" do
     it "#todo_list returns ['Buy Chocolates']" do
       todo_tracker = TodoTracker.new
       todo_tracker.add_task("Buy Chocolates", "Meditate")
@@ -71,8 +71,8 @@ RSpec.describe TodoTracker do
     end
   end
 
-  context "" do
-    it "" do
+  context "10. when marking a task that does not exist in the list" do
+    it "raise error" do
       todo_tracker = TodoTracker.new
       todo_tracker.add_task("Buy Chocolates", "Meditate")
       expect{ todo_tracker.mark_task("Buy Milk") }.to raise_error "Task not found"
