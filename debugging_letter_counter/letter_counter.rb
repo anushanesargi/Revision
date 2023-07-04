@@ -14,7 +14,7 @@ class LetterCounter
       else 
         counter[char] = (counter[char]) + 1
       end
-      binding.irb
+      # binding.irb
       if counter[char] > most_common_count
         most_common = char
         most_common_count = counter[char]
