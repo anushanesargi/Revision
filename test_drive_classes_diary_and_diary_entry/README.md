@@ -2,7 +2,7 @@
 
 * Make a list of examples of integration tests in a text file before statring the test-drive
 
-```
+```ruby
 # File: lib/diary.rb
 class Diary
   def initialize
@@ -39,7 +39,7 @@ class Diary
 end
 ```
 
-```
+```ruby
 # File: lib/diary_entry.rb
 class DiaryEntry
   def initialize(title, contents) # title, contents are strings
