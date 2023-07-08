@@ -1,18 +1,20 @@
 class Diary
   def initialize
-    @entires = []
+    @entries = []
   end
 
   def add(entry)
-    @entires << entry
+    @entries << entry
   end
 
   def all
-    return @entires
+    return @entries
   end
 
   def count_words
-    # @entries.each 
+    return @entries.map do |entry|
+      entry.count_words
+    end.sum
   end
 
   def reading_time(wpm) # wpm is an integer representing
