@@ -1,6 +1,7 @@
 class DiaryEntry
   def initialize(title, contents) # title, contents are strings
-    # ...
+    @title = title
+    @contents = contents
   end
 
   def title
