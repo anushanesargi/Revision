@@ -5,15 +5,15 @@ class DiaryEntry
   end
 
   def title
-    @title
+    return @title
   end
 
   def contents
-    @contents
+    return @contents
   end
 
   def count_words
-    @contents.split(" ").length
+    return @contents.split(" ").size
   end
 
   def reading_time(wpm) # wpm is an integer representing
