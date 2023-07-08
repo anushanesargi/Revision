@@ -17,5 +17,10 @@ describe DiaryEntry do
       diary_entry = DiaryEntry.new("my_title", "")
       expect(diary_entry.count_words).to eq 0
     end
+
+    it "returns the number of words in contents" do
+      diary_entry = DiaryEntry.new("my_title", "my contents")
+      expect(diary_entry.count_words).to eq 2
+    end
   end
 end
