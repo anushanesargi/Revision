@@ -12,9 +12,7 @@ class Diary
   end
 
   def count_words
-    return @entries.map do |entry|
-      entry.count_words
-    end.sum
+    return @entries.map(&:count_words).sum
   end
 
   def reading_time(wpm) # wpm is an integer representing
