@@ -16,6 +16,7 @@ class Diary
   end
 
   def reading_time(wpm)
+    fail "reading speed needs to be positive" if !(wpm.positive?)
     return ((count_words.to_f)/wpm).ceil
   end
 
