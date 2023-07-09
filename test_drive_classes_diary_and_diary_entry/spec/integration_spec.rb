@@ -23,7 +23,7 @@ describe "integration" do
     end
 
     describe "reading time" do
-      xit "Returns an integer representing an estimate of the reading time in minutes" do
+      it "Returns an integer representing an estimate of the reading time in minutes" do
         diary = Diary.new
         diary_entry_title = DiaryEntry.new("my_title", "contents")
         diary_entry_next_title = DiaryEntry.new("my_title_next", "double contents")
