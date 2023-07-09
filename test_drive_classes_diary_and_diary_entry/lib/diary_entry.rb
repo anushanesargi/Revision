@@ -18,6 +18,7 @@ class DiaryEntry
 
   def reading_time(wpm)
     fail "wpm needs to be a positive integer" if !(wpm.positive?)
+    return (count_words.to_f/wpm).ceil
   end
 
   def reading_chunk(wpm, minutes) # `wpm` is an integer representing the number
