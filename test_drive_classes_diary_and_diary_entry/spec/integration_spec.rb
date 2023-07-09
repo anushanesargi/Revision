@@ -11,7 +11,7 @@ describe "integration" do
       expect(diary.all).to eq [diary_entry]
     end
 
-    describe "#count_words" do
+    describe "word counting" do
       it "return the number of words in contents of diary entries" do
         diary = Diary.new
         diary_entry_title = DiaryEntry.new("my_title", "contents")
@@ -19,6 +19,17 @@ describe "integration" do
         diary.add(diary_entry_title)
         diary.add(diary_entry_next_title)
         expect(diary.count_words).to eq 3
+      end
+    end
+
+    describe "reading time" do
+      it "Returns an integer representing an estimate of the reading time in minutes" do
+        diary = Diary.new
+        diary_entry_title = DiaryEntry.new("my_title", "contents")
+        diary_entry_next_title = DiaryEntry.new("my_title_next", "double contents")
+        diary.add(diary_entry_title)
+        diary.add(diary_entry_next_title)
+        expect(diary.reading_time(2)).to eq 2
       end
     end
   end
