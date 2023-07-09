@@ -40,6 +40,11 @@ describe DiaryEntry do
         diary_entry = DiaryEntry.new("my_title", "my_contents")
         expect(diary_entry.reading_time(2)).to eq 1
       end
+
+      it "returns 0 if contents is empty" do
+        diary_entry = DiaryEntry.new("my_title", "")
+        expect(diary_entry.reading_time(2)).to eq 0
+      end
     end
   end
 end
