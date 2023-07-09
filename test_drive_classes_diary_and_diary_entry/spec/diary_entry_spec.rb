@@ -45,6 +45,11 @@ describe DiaryEntry do
         diary_entry = DiaryEntry.new("my_title", "")
         expect(diary_entry.reading_time(2)).to eq 0
       end
+
+      it "returns 2 for content with two word given wpm 1" do
+        diary_entry = DiaryEntry.new("my_title", "my contents")
+        expect(diary_entry.reading_time(1)).to eq 2
+      end
     end
   end
 end
