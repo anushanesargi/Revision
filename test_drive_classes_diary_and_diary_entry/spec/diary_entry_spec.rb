@@ -35,6 +35,11 @@ describe DiaryEntry do
         diary_entry = DiaryEntry.new("my_title", "my_contents")
         expect { diary_entry.reading_time(-1) }.to raise_error "wpm needs to be a positive integer"
       end
+
+      it "returns 1 for content with one word given wpm 2" do
+        diary_entry = DiaryEntry.new("my_title", "my_contents")
+        expect(diary_entry.reading_time(2)).to eq 1
+      end
     end
   end
 end
