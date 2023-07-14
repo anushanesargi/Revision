@@ -13,7 +13,7 @@ class DiaryEntry
   end
 
   def count_words
-    return @contents.split(" ").size
+    return splitting_contents.size
   end
 
   def reading_time(wpm)
@@ -28,5 +28,10 @@ class DiaryEntry
     # If called again, `reading_chunk` should return the next chunk, skipping
     # what has already been read, until the contents is fully read.
     # The next call after that it should restart from the beginning.
+  end
+
+  private
+  def splitting_contents
+    @contents.split(" ")
   end
 end
