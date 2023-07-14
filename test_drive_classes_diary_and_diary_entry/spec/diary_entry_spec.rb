@@ -52,4 +52,13 @@ describe DiaryEntry do
       end
     end
   end
+
+  describe "#reading_chunk" do
+    context "Returns a string with a chunk of the contents that the user could read in the given number of minutes." do
+      it "raises an error for 0 reading speed" do
+        diary_entry = DiaryEntry.new("my_title", "my_contents")
+        expect { diary_entry.reading_chunk(0, 3) }.to raise_error "wpm needs to be a positive integer"
+      end
+    end
+  end
 end
