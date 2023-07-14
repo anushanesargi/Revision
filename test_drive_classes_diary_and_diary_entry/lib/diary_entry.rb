@@ -22,7 +22,7 @@ class DiaryEntry
   end
 
   def reading_chunk(wpm, minutes)
-    fail "wpm needs to be a positive integer" unless wpm != 0
+    fail "wpm needs to be a positive integer" unless wpm.positive?
     # Returns a string with a chunk of the contents that the user could read
     # in the given number of minutes.
     # If called again, `reading_chunk` should return the next chunk, skipping
