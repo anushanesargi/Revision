@@ -59,6 +59,11 @@ describe DiaryEntry do
         diary_entry = DiaryEntry.new("my_title", "my_contents")
         expect { diary_entry.reading_chunk(0, 3) }.to raise_error "wpm needs to be a positive integer"
       end
+
+      it "raises an error for negative reading speed" do
+        diary_entry = DiaryEntry.new("my_title", "my_contents")
+        expect { diary_entry.reading_chunk(-1, 3) }.to raise_error "wpm needs to be a positive integer"
+      end
     end
   end
 end
