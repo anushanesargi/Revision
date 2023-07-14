@@ -64,6 +64,11 @@ describe DiaryEntry do
         diary_entry = DiaryEntry.new("my_title", "my_contents")
         expect { diary_entry.reading_chunk(-1, 3) }.to raise_error "wpm needs to be a positive integer"
       end
+
+      it "Returns one one one one for reading speed 2 and minutes 2" do
+        diary_entry = DiaryEntry.new("diary_title", ("one " * 5))
+        expect(diary_entry.reading_chunk(2, 2)).to eq "one one one one"
+      end
     end
   end
 end
