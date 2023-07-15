@@ -76,6 +76,13 @@ describe DiaryEntry do
         second_chunk = diary_entry.reading_chunk(1, 1)
         expect(second_chunk).to eq "three"
       end
+
+      it "Returns form the start after everything has been read" do
+        diary_entry = DiaryEntry.new("diary_title", ("one two three four"))
+        first_chunk = diary_entry.reading_chunk(1, 4)
+        second_chunk = diary_entry.reading_chunk(1, 1)
+        expect(second_chunk).to eq "one"
+      end
     end
   end
 end
