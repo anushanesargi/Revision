@@ -1,10 +1,12 @@
 class Diary
   def initialize
     @entries = []
+    @closest_reading_time = 0 
   end
 
   def add(entry)
     @entries << entry
+    @closest_reading_time = 0
   end
 
   def all
@@ -26,14 +28,20 @@ class Diary
       entry.reading_time(wpm) <= minutes
     end
 
-    return best_entries.first
-        # `wpm` is an integer representing the number of words the user can read
-        # per minute.
-        # `minutes` is an integer representing the number of minutes the user
-        # has to read.
-    # Returns an instance of diary entry representing the entry that is closest 
-    # to, but not over, the length that the user could read in the minutes they
-    # have available given their reading speed.
+    puts "#{best_entries}"
+    
+    best_entry = []
+
+    best_entries.each do |entry|
+      if entry.reading_time(wpm) > @closest_reading_time
+        @closest_reading_time = entry.reading_time(wpm)
+        best_entry = [entry]
+      end
+    end
+
+    puts "final entry #{best_entry}"
+
+    return best_entry.first
   end
 
   private
