@@ -26,4 +26,16 @@ describe Diary do
       end
     end
   end
+
+  describe "#find_best_entry_for_reading_time" do
+    it "raises error for wpm 0" do
+      diary = Diary.new
+      expect { diary.find_best_entry_for_reading_time(0) }.to raise_error "reading speed needs to be positive"
+    end
+
+    it "raises error for wpm -1" do
+      diary = Diary.new
+      expect { diary.find_best_entry_for_reading_time(-1) }.to raise_error "reading speed needs to be positive"
+    end
+  end
 end
