@@ -26,17 +26,17 @@ describe DiaryEntry do
 
   describe "#reading_time" do
     context "Returns an integer representing an estimate of the reading time in minutes" do
-      it "raises error for wpm 0" do
+      it "raises error for reading speed 0" do
         diary_entry = DiaryEntry.new("my_title", "my_contents")
-        expect { diary_entry.reading_time(0) }.to raise_error "wpm needs to be a positive integer"
+        expect { diary_entry.reading_time(0) }.to raise_error "reading speed needs to be a positive integer"
       end
 
-      it "raises error for wpm -1" do
+      it "raises error for reading speed -1" do
         diary_entry = DiaryEntry.new("my_title", "my_contents")
-        expect { diary_entry.reading_time(-1) }.to raise_error "wpm needs to be a positive integer"
+        expect { diary_entry.reading_time(-1) }.to raise_error "reading speed needs to be a positive integer"
       end
 
-      it "returns 1 for content with one word given wpm 2" do
+      it "returns 1 for content with one word given reading speed 2" do
         diary_entry = DiaryEntry.new("my_title", "my_contents")
         expect(diary_entry.reading_time(2)).to eq 1
       end
@@ -46,7 +46,7 @@ describe DiaryEntry do
         expect(diary_entry.reading_time(2)).to eq 0
       end
 
-      it "returns 2 for content with two word given wpm 1" do
+      it "returns 2 for content with two word given reading speed 1" do
         diary_entry = DiaryEntry.new("my_title", "my contents")
         expect(diary_entry.reading_time(1)).to eq 2
       end
@@ -57,12 +57,12 @@ describe DiaryEntry do
     context "Returns a string with a chunk of the contents that the user could read in the given number of minutes." do
       it "raises an error for 0 reading speed" do
         diary_entry = DiaryEntry.new("my_title", "my_contents")
-        expect { diary_entry.reading_chunk(0, 3) }.to raise_error "wpm needs to be a positive integer"
+        expect { diary_entry.reading_chunk(0, 3) }.to raise_error "reading speed needs to be a positive integer"
       end
 
       it "raises an error for negative reading speed" do
         diary_entry = DiaryEntry.new("my_title", "my_contents")
-        expect { diary_entry.reading_chunk(-1, 3) }.to raise_error "wpm needs to be a positive integer"
+        expect { diary_entry.reading_chunk(-1, 3) }.to raise_error "reading speed needs to be a positive integer"
       end
 
       it "Returns one one one one for reading speed 2 and minutes 2" do

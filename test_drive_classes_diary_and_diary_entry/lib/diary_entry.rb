@@ -18,12 +18,12 @@ class DiaryEntry
   end
 
   def reading_time(wpm)
-    fail "wpm needs to be a positive integer" if !(wpm.positive?)
+    fail "reading speed needs to be a positive integer" if !(wpm.positive?)
     return (count_words.to_f/wpm).ceil
   end
 
   def reading_chunk(wpm, minutes)
-    fail "wpm needs to be a positive integer" unless wpm.positive?
+    fail "reading speed needs to be a positive integer" unless wpm.positive?
 
     words_end_at = @words_read_until + (wpm * minutes)
     
