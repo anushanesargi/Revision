@@ -16,13 +16,12 @@ class Diary
   end
 
   def reading_time(wpm)
-    fail "reading speed needs to be positive" if !(wpm.positive?)
+    fail_if(wpm)
     return ((count_words.to_f)/wpm).ceil
   end
 
   def find_best_entry_for_reading_time(wpm, minutes)
-    fail "reading speed needs to be positive" if !(wpm.positive?)
-
+    fail_if(wpm)
     best_entries = @entries.filter do |entry|
       puts entry.reading_time(wpm)
        entry.reading_time(wpm) <= minutes
@@ -37,4 +36,11 @@ class Diary
     # to, but not over, the length that the user could read in the minutes they
     # have available given their reading speed.
   end
+
+  private
+
+  def fail_if(wpm)
+    fail "reading speed needs to be positive" if !(wpm.positive?)
+  end
+
 end
