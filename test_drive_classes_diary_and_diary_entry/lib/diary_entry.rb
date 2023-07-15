@@ -2,6 +2,7 @@ class DiaryEntry
   def initialize(title, contents) # title, contents are strings
     @title = title
     @contents = contents
+    @words_read_until = 0
   end
 
   def title
@@ -24,8 +25,15 @@ class DiaryEntry
   def reading_chunk(wpm, minutes)
     fail "wpm needs to be a positive integer" unless wpm.positive?
 
-    total_words = wpm * minutes
-    return splitting_contents[0...total_words].join(" ")
+    # total_words = wpm * minutes
+    # return splitting_contents[0...total_words].join(" ")
+    words_end_at = @words_read_until + (wpm * minutes)
+    
+    chunk_of_words = splitting_contents[@words_read_until...words_end_at] # Returns a string with a chunk of the contents that the user could read in the given number of minutes.
+   
+    @words_read_until = words_end_at
+
+    return chunk_of_words.join(" ")
     # Returns a string with a chunk of the contents that the user could read
     # in the given number of minutes.
     # If called again, `reading_chunk` should return the next chunk, skipping
