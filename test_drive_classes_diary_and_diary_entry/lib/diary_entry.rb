@@ -27,7 +27,7 @@ class DiaryEntry
 
     words_end_at = @words_read_until + (wpm * minutes)
     
-    chunk_of_words = splitting_contents[@words_read_until...words_end_at] # Returns a string with a chunk of the contents that the user could read in the given number of minutes.
+    chunk_of_words = splitting_contents[@words_read_until...words_end_at]
    
     if words_end_at >= count_words
       @words_read_until = 0
