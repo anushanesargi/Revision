@@ -21,6 +21,7 @@ class Diary
   end
 
   def find_best_entry_for_reading_time(wpm, minutes)
+    fail "reading speed needs to be positive" if !(wpm.positive?)
 
     best_entries = @entries.filter do |entry|
       puts entry.reading_time(wpm)
