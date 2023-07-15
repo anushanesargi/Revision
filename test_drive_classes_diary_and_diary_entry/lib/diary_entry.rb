@@ -25,20 +25,18 @@ class DiaryEntry
   def reading_chunk(wpm, minutes)
     fail "wpm needs to be a positive integer" unless wpm.positive?
 
-    # total_words = wpm * minutes
-    # return splitting_contents[0...total_words].join(" ")
     words_end_at = @words_read_until + (wpm * minutes)
     
     chunk_of_words = splitting_contents[@words_read_until...words_end_at] # Returns a string with a chunk of the contents that the user could read in the given number of minutes.
    
-    @words_read_until = words_end_at
+    if words_end_at >= count_words
+      @words_read_until = 0
+    else
+      @words_read_until = words_end_at
+    end
 
     return chunk_of_words.join(" ")
-    # Returns a string with a chunk of the contents that the user could read
-    # in the given number of minutes.
-    # If called again, `reading_chunk` should return the next chunk, skipping
-    # what has already been read, until the contents is fully read.
-    # The next call after that it should restart from the beginning.
+
   end
 
   private
