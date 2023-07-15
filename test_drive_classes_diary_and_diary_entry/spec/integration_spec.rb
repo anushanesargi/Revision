@@ -66,6 +66,20 @@ describe "integration" do
         diary.add(diary_entry_title)
         expect(diary.find_best_entry_for_reading_time(1, 5)).to eq diary_entry_title
       end
+
+      xit "Returns nil for minutes exceeding reading_time" do
+        diary = Diary.new
+        diary_entry_title = DiaryEntry.new("my_title", "Today is a good day")
+        diary.add(diary_entry_title)
+        expect(diary.find_best_entry_for_reading_time(1, 6)).to eq nil
+      end
+
+      it "Returns nil for minutes lesser than reading_time" do
+        diary = Diary.new
+        diary_entry_title = DiaryEntry.new("my_title", "Today is a good day")
+        diary.add(diary_entry_title)
+        expect(diary.find_best_entry_for_reading_time(1, 4)).to eq nil
+      end
     end
   end
 end

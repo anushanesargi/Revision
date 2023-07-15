@@ -22,7 +22,12 @@ class Diary
 
   def find_best_entry_for_reading_time(wpm, minutes)
 
-    return @entries.first
+    best_entries = @entries.filter do |entry|
+      puts entry.reading_time(wpm)
+       entry.reading_time(wpm) <= minutes
+    end
+
+    return best_entries.first
         # `wpm` is an integer representing the number of words the user can read
         # per minute.
         # `minutes` is an integer representing the number of minutes the user
