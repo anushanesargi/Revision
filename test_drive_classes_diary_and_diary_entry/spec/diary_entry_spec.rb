@@ -69,6 +69,13 @@ describe DiaryEntry do
         diary_entry = DiaryEntry.new("diary_title", ("one " * 5))
         expect(diary_entry.reading_chunk(2, 2)).to eq "one one one one"
       end
+
+      it "Returns the next chunk three" do
+        diary_entry = DiaryEntry.new("diary_title", ("one two three four"))
+        first_chunk = diary_entry.reading_chunk(1, 2)
+        second_chunk = diary_entry.reading_chunk(1, 1)
+        expect(second_chunk).to eq "three"
+      end
     end
   end
 end
